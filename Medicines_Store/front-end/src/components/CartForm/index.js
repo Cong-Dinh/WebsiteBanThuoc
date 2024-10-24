@@ -16,7 +16,7 @@ const CartForm = () => {
                 .then(response => {
                     const cart = response.data;
                     setValue('accountId', cart.accountId);
-                    setValue('shoeId', cart.shoeId);
+                    setValue('medicineId', cart.medicineId);
                     setValue('quantity', cart.quantity);
 
                 })
@@ -63,12 +63,12 @@ const CartForm = () => {
                 </div>
 
                 <div className="mb-3">
-                    <label htmlFor="shoeId" className="form-label">Shoe ID</label>
+                    <label htmlFor="medicineId" className="form-label">Medicines ID</label>
                     <input
                         type="text"
                         className="form-control"
                         id="shoeId"
-                        {...register('shoeId', { required: 'shoe ID is required' })}
+                        {...register('medicineId', { required: 'Medicine ID is required' })}
                     />
                     {errors.shoeId && <span className="text-danger">{errors.shoeId.message}</span>}
                 </div>

@@ -33,7 +33,7 @@ const CartList = () => {
 
     const filteredCarts = carts.filter(cart =>
         cart.cartId.toString().includes(searchQuery.toString()) ||
-        cart.shoeId.toString().includes(searchQuery.toString()) ||
+        cart.medicineId.toString().includes(searchQuery.toString()) ||
         cart.quantity.toString().includes(searchQuery.toString())
     );
 
@@ -57,7 +57,7 @@ const CartList = () => {
                 <thead>
                 <tr>
                     <th>Account ID</th>
-                    <th>Shoe ID</th>
+                    <th>Medicine ID</th>
                     <th>Quantity</th>
                 </tr>
                 </thead>
@@ -65,7 +65,7 @@ const CartList = () => {
                 {filteredCarts.map(cart => (
                     <tr key={cart.cartId}>
                         <td>{cart.accountId}</td>
-                        <td>{cart.shoeId}</td>
+                        <td>{cart.medicineId}</td>
                         <td>{cart.quantity}</td>
                         <td>
                             <button className="btn btn-warning me-2" onClick={() => handleEdit(cart.cartId)}>Edit
