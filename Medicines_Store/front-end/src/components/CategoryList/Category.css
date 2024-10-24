@@ -1,0 +1,113 @@
+/* Căn chỉnh tổng thể */
+.container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #343a40;
+}
+
+/* Thanh tìm kiếm và nút thêm */
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-container input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Bảng hiển thị */
+.table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Nút hành động */
+.table td button {
+    margin-right: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.table td .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+}
+
+.table td .btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.table td .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+}
+
+.table td .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Thông báo Toastify */
+.Toastify__toast {
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.Toastify__toast--success {
+    background-color: #28a745;
+    color: white;
+}
+
+.Toastify__toast--error {
+    background-color: #dc3545;
+    color: white;
+}
