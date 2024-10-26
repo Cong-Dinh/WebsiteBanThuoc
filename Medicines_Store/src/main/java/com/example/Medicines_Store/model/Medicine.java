@@ -31,10 +31,13 @@ public class Medicine {
     @Column(name = "ExpirationDate")
     private java.sql.Date expirationDate;
 
+
     // Constructors
     public Medicine() {}
 
-    public Medicine(String name, Integer categoryId, Integer manufacturerId, Double price, Integer stockQuantity, String description, java.sql.Date expirationDate) {
+    public Medicine(String name, Integer categoryId, Integer manufacturerId,
+                    Double price, Integer stockQuantity, String description,
+                    java.sql.Date expirationDate) {
         this.name = name;
         this.categoryId = categoryId;
         this.manufacturerId = manufacturerId;

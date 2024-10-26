@@ -1,0 +1,108 @@
+/* MedicineForm.css */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #f9f9f9, #e8e8e8);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-input {
+    width: 100%;               /* Chiếm toàn bộ chiều ngang */
+    padding: 12px;             /* Khoảng cách trong ô input */
+    border: 1px solid #ddd;    /* Viền xám nhạt */
+    border-radius: 8px;        /* Bo góc */
+    font-size: 18px;           /* Tăng kích thước chữ */
+    font-family: 'Poppins', sans-serif; /* Font hiện đại */
+    transition: border-color 0.3s; /* Hiệu ứng mượt khi thay đổi viền */
+}
+
+.form-input:focus {
+    border-color: #5c9ded;     /* Viền xanh khi focus */
+    outline: none;             /* Bỏ viền mặc định */
+    box-shadow: 0 0 8px rgba(92, 157, 237, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+
+.form-error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.d-flex {
+    display: flex;
+    justify-content: end;  /* Căn các nút về bên phải */
+    gap: 10px;             /* Khoảng cách giữa các nút */
+    margin-top: 20px;      /* Khoảng cách phía trên */
+}
+
+.button-save {
+    background-color: #4CAF50;  /* Màu xanh lá */
+    color: white;               /* Màu chữ trắng */
+    padding: 10px 20px;         /* Khoảng cách trong nút */
+    border: none;               /* Xóa viền */
+    border-radius: 5px;         /* Bo góc */
+    cursor: pointer;            /* Con trỏ thành tay khi hover */
+    font-size: 16px;            /* Kích thước chữ */
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút Save */
+.button-save:hover {
+    background-color: #45a049;  /* Màu tối hơn khi hover */
+}
+
+/* Nút Cancel với màu nhạt hơn */
+.button-cancel {
+    background-color: #e0e0e0;  /* Màu xám nhạt */
+    color: #333;                /* Màu chữ đen */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút Cancel */
+.button-cancel:hover {
+    background-color: #d6d6d6;  /* Màu xám đậm hơn khi hover */
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;               /* Kích thước chữ */
+    color: #333;                   /* Màu chữ */
+    font-weight: bold;             /* Đậm chữ */
+    text-align: center;            /* Căn giữa tiêu đề */
+    margin: 20px 0;                /* Khoảng cách trên dưới */
+    padding-bottom: 8px;           /* Khoảng cách dưới chữ */
+    letter-spacing: 1px;           /* Khoảng cách giữa các ký tự */
+    text-transform: uppercase;     /* Chuyển chữ thành in hoa */
+}
+
+.form-label {
+    display: block;            /* Đảm bảo label nằm trên input */
+    font-family: 'Poppins', sans-serif; /* Font chữ hiện đại */
+    font-size: 16px;           /* Kích thước chữ */
+    color: #2c3e50;            /* Màu xám đậm */
+    margin-bottom: 8px;        /* Khoảng cách bên dưới */
+    font-weight: 700;          /* Độ dày trung bình */
+    letter-spacing: 0.5px;     /* Khoảng cách giữa các ký tự */
+}
+

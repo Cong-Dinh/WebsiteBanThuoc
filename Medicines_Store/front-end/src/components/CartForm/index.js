@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../MedicineForm/Medicine.css';
 
 const CartForm = () => {
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
@@ -48,45 +49,45 @@ const CartForm = () => {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="form-container">
             <h2>{cartId ? 'Edit Cart' : 'New Cart'}</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="accountId" className="form-label">Account ID</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-input"
                         id="accountId"
                         {...register('accountId', { required: 'Account ID is required' })}
                     />
-                    {errors.accountId && <span className="text-danger">{errors.accountId.message}</span>}
+                    {errors.accountId && <span className="form-error">{errors.accountId.message}</span>}
                 </div>
 
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="medicineId" className="form-label">Medicines ID</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-input"
                         id="shoeId"
                         {...register('medicineId', { required: 'Medicine ID is required' })}
                     />
-                    {errors.shoeId && <span className="text-danger">{errors.shoeId.message}</span>}
+                    {errors.shoeId && <span className="form-error">{errors.shoeId.message}</span>}
                 </div>
 
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="quantity" className="form-label">Quantity</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-input"
                         id="quantity"
                         {...register('quantity', { required: 'Quantity is required' })}
                     />
-                    {errors.quantity && <span className="text-danger">{errors.quantity.message}</span>}
+                    {errors.quantity && <span className="form-error">{errors.quantity.message}</span>}
                 </div>
 
                 <div className="d-flex justify-content-end">
-                    <button type="submit" className="btn btn-success me-2">Save</button>
-                    <button type="button" className="btn btn-secondary" onClick={() => navigate('/carts')}>Cancel</button>
+                    <button type="submit" className="button-save">Save</button>
+                    <button type="button" className="button-cancel" onClick={() => navigate('/carts')}>Cancel</button>
                 </div>
             </form>
             <ToastContainer />

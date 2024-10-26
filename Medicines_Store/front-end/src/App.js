@@ -8,6 +8,8 @@ import CartList from "./components/CartList";
 import CartForm from "./components/CartForm";
 import CategoryList from "./components/CategoryList";
 import CategoryForm from "./components/CategoryForm";
+import MedicineList from "./components/MedicineList";
+import MedicineForm from "./components/MedicineForm";
 
 const App = () => (
     <Router>
@@ -27,6 +29,10 @@ const App = () => (
             <Route path="/categories" element={<CategoryList/>}/>
             <Route path="/categories/new" element={<CategoryForm/>}/>
             <Route path="/categories/edit/:categoryId" element={<CategoryForm/>}/>
+
+            <Route path="/medicines" element={<MedicineList/>}/>
+            <Route path="/medicines/new" element={<MedicineForm/>}/>
+            <Route path="/medicines/edit/:medicineId" element={<MedicineForm/>}/>
 
         </Routes>
     </Router>

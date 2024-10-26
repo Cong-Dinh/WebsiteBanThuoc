@@ -1,45 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {Link, useNavigate} from 'react-router-dom';
+import { useNavigate , Link} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-//import styles from './CustomerList.module.scss';
 import '../CategoryList/Category.css';
-import cart from "../../assets/images/cart.jpg";
-import medicine from "../../assets/images/medicine.png";
+import cart from '../../assets/images/cart.jpg';
+import medicine from '../../assets/images/medicine.png';
 import customer from '../../assets/images/customer.png';
 import account from '../../assets/images/account.png';
-import category from "../../assets/images/category.png";
+import category from '../../assets/images/category.png';
 
-const CustomerList = () => {
-    const [customers, setCustomers] = useState([]);
+
+const MedicineList = () => {
+    const [medicines, setMedicines] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:8080/customers/getAll')
-            .then(response => setCustomers(response.data))
-            .catch(error => console.error('Error fetching customers:', error));
+        axios.get('http://localhost:8080/medicines/getAll')
+            .then(response => setMedicines(response.data))
+            .catch(error => console.error('Error fetching Medicine:', error));
     }, []);
 
-    const handleEdit = (customerId) => {
-        navigate(`/customers/edit/${customerId}`);
+    const handleEdit = (medicineId) => {
+        navigate(`/medicines/edit/${medicineId}`);
     };
 
-    const handleDelete = (customerId) => {
-        if (window.confirm('Are you sure you want to delete this customer?')) {
-            axios.delete(`http://localhost:8080/customers/delete/${customerId}`)
+    const handleDelete = (medicineId) => {
+        if (window.confirm('Are you sure you want to delete this medicine?')) {
+            axios.delete(`http://localhost:8080/medicines/delete/${medicineId}`)
                 .then(() => {
-                    setCustomers(customers.filter(customer => customer.customerId !== customerId));
-                    toast.success('Customer deleted successfully!');
+                    setMedicines(medicines.filter(medicine => medicine.medicineId !== medicineId));
+                    toast.success('Medicine deleted successfully!');
                 })
-                .catch(error => console.error('Error deleting customer:', error));
+                .catch(error => console.error('Error deleting medicine:', error));
         }
     };
 
-    const filteredCustomers = customers.filter(customer =>
-        customer.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        customer.customerId.toString().includes(searchQuery.toString())
+    const filteredMedicines = medicines.filter(medicine =>
+        medicine.name.includes(searchQuery) ||
+        medicine.medicineId.toString().includes(searchQuery.toString())
     );
 
     return (
@@ -55,7 +55,7 @@ const CustomerList = () => {
                     <Link to="/customers" className="icon-a"><img src={customer} alt="menu"
                                                                   className="icons"/><span>Customers</span></Link>
                     <Link to="/carts" className="icon-a"><img src={cart} alt="menu"
-                                                              className="icons"/><span>Carts</span></Link>
+                                                                  className="icons"/><span>Carts</span></Link>
                     <Link to="/accounts" className="icon-a"><img src={account} alt="menu"
                                                                  className="icons"/><span>Accounts</span></Link>
 
@@ -64,7 +64,7 @@ const CustomerList = () => {
                 </div>
             </div>
             <div className="container mt-5">
-                <h2>Customer List</h2>
+                <h2>Medicine List</h2>
                 <div className="">
                     <div className="search">
                         <input
@@ -75,35 +75,41 @@ const CustomerList = () => {
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
                     </div>
-                    <button className="btn-new" onClick={() => navigate('/customers/new')}>Add New Customer
+                    <button className="btn-new" onClick={() => navigate('/medicines/new')}>Add New Medicine
                     </button>
                 </div>
 
                 <table className="table table-bordered">
                     <thead>
                     <tr>
-                        <th>Customer ID</th>
-                        <th>Full Name</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                        <th>Address</th>
-                        <th>Actions</th>
+                        <th style={{width: '30px', height: '50px'}}>ID</th>
+                        <th>Name</th>
+                        <th style={{width: '30px', height: '50px'}}>Category ID</th>
+                        <th style={{width: '30px', height: '50px'}}>Manufacture ID</th>
+                        <th>Price</th>
+                        <th style={{width: '30px', height: '50px'}}>Quantity</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {filteredCustomers.map(customer => (
-                        <tr key={customer.customerId}>
-                            <td>{customer.customerId}</td>
-                            <td>{customer.fullName}</td>
-                            <td>{customer.email}</td>
-                            <td>{customer.phoneNumber}</td>
-                            <td>{customer.address}</td>
+                    {filteredMedicines.map(medicine => (
+                        <tr key={medicine.medicineId}>
+                            <td>{medicine.medicineId}</td>
+                            <td>{medicine.name}</td>
+                            <td>{medicine.categoryId}</td>
+                            <td>{medicine.manufacturerId}</td>
+                            <td>${medicine.price}</td>
+                            <td>{medicine.stockQuantity}</td>
+                            <td>{medicine.description}</td>
+                            <td>{medicine.expirationDate}</td>
                             <td>
                                 <button className="btn btn-warning me-2"
-                                        onClick={() => handleEdit(customer.customerId)}>Edit
+                                        onClick={() => handleEdit(medicine.medicineId)}>Edit
                                 </button>
                                 <button className="btn btn-danger"
-                                        onClick={() => handleDelete(customer.customerId)}>Delete
+                                        onClick={() => handleDelete(medicine.medicineId)}>Delete
                                 </button>
                             </td>
                         </tr>
@@ -116,4 +122,4 @@ const CustomerList = () => {
     );
 };
 
-export default CustomerList;
+export default MedicineList;

@@ -1,6 +1,7 @@
 /* Căn chỉnh tổng thể */
 .container {
     margin-top: 50px;
+    margin-left: 230px;
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -42,6 +43,10 @@ h2 {
     font-size: 16px;
 }
 
+.mb-3{
+    margin-bottom: 10px;
+}
+
 /* Bảng hiển thị */
 .table {
     margin-top: 20px;
@@ -52,7 +57,7 @@ h2 {
 
 .table th, .table td {
     padding: 12px 15px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #dee2e6;
 }
 
@@ -111,3 +116,146 @@ h2 {
     background-color: #dc3545;
     color: white;
 }
+
+
+.logo{
+    margin: 0px;
+    margin-left: 30px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 38px;
+}
+
+.logo span{
+    color: #f7403b;
+}
+
+.sidenav{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #272c4a;
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.sidenav a{
+    padding: 20px 8px 20px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav form#dx input{
+    width: 100%;
+    padding: 20px 8px 20px 78px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    text-align: left;
+    transition: 0.3s;
+    position: absolute;
+    cursor: pointer;
+}
+
+.sidenav form#dx img.icons{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 32px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+}
+
+.sidenav a span{
+    padding: 15px 15px 15px 15px;
+}
+
+.sidenav a:hover, .sidenav form#dx input:hover{
+    color: #f1f1f1;
+    background-color: #81818149;
+}
+
+.sidenav a.icon-a img.icons{
+    width: 30px;
+    height: 30px;
+    margin-bottom: -6px;
+    line-height: 30px;
+}
+
+.btn-new {
+    background-color: #4CAF50; /* Màu xanh lá cây */
+    color: white;              /* Màu chữ trắng */
+    padding: 12px 24px;        /* Khoảng cách trong nút */
+    border: none;              /* Không có viền */
+    border-radius: 8px;        /* Bo góc */
+    cursor: pointer;           /* Con trỏ chuột khi hover */
+    font-size: 16px;           /* Kích thước chữ */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hiệu ứng khi hover */
+.btn-new:hover {
+    background-color: #45a049; /* Màu tối hơn khi hover */
+    transform: scale(1.05);    /* Tăng kích thước nhẹ */
+}
+
+/* Hiệu ứng khi bấm */
+.btn-new:active {
+    background-color: #3e8e41; /* Màu đậm hơn khi nhấn */
+    transform: scale(0.95);    /* Thu nhỏ nhẹ */
+}
+
+.search {
+    position: relative;         /* Để định vị các phần tử bên trong */
+    width: 300px;               /* Độ rộng ô tìm kiếm */
+    margin: 20px auto;          /* Căn giữa và tạo khoảng cách trên dưới */
+}
+
+.search input {
+    width: 100%;                /* Chiếm toàn bộ chiều rộng khung search */
+    padding: 12px 20px;         /* Khoảng cách trong ô input */
+    border: 2px solid #ccc;     /* Viền xám */
+    border-radius: 25px;        /* Bo góc cho ô tìm kiếm */
+    font-size: 16px;            /* Kích thước chữ */
+    transition: border-color 0.3s ease;
+    outline: none;              /* Bỏ viền mặc định khi focus */
+}
+
+/* Hiệu ứng khi focus vào ô input */
+.search input:focus {
+    border-color: #4CAF50;      /* Viền chuyển sang màu xanh lá */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Hiệu ứng đổ bóng */
+}
+
+/* Placeholder tùy chỉnh */
+.search input::placeholder {
+    color: #999;               /* Màu placeholder */
+    font-style: italic;        /* Chữ nghiêng cho placeholder */
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif; /* Font chữ */
+    font-size: 40px;                   /* Kích thước chữ */
+    color: #16c777;                       /* Màu chữ */
+    font-weight: 900;                  /* Đậm chữ hơn */
+    text-align: center;                /* Căn giữa tiêu đề */
+    margin: 20px 0;                    /* Khoảng cách trên dưới */
+    padding-bottom: 8px;               /* Khoảng cách dưới chữ */
+    letter-spacing: 1px;               /* Khoảng cách giữa các ký tự */
+    text-transform: uppercase;         /* Chuyển chữ thành in hoa */
+}
+
+

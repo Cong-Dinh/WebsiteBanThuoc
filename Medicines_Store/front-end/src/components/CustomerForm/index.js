@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../MedicineForm/Medicine.css';
 
 const CustomerForm = () => {
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
@@ -49,56 +50,56 @@ const CustomerForm = () => {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="form-container">
             <h2>{customerId ? 'Edit Customer' : 'New Customer'}</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="fullName" className="form-label">Name</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-input"
                         id="fullName"
                         {...register('fullName', { required: 'Name is required' })}
                     />
-                    {errors.fullName && <span className="text-danger">{errors.fullName.message}</span>}
+                    {errors.fullName && <span className="form-error">{errors.fullName.message}</span>}
                 </div>
 
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="phoneNumber" className="form-label">Phone</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-input"
                         id="phoneNumber"
                         {...register('phoneNumber', { required: 'Phone is required' })}
                     />
-                    {errors.phoneNumber && <span className="text-danger">{errors.phoneNumber.message}</span>}
+                    {errors.phoneNumber && <span className="form-error">{errors.phoneNumber.message}</span>}
                 </div>
 
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="email" className="form-label">Email</label>
                     <input
                         type="email"
-                        className="form-control"
+                        className="form-input"
                         id="email"
                         {...register('email', { required: 'Email is required' })}
                     />
-                    {errors.email && <span className="text-danger">{errors.email.message}</span>}
+                    {errors.email && <span className="form-error">{errors.email.message}</span>}
                 </div>
 
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="address" className="form-label">Address</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-input"
                         id="address"
                         {...register('address', { required: 'Address is required' })}
                     />
-                    {errors.address && <span className="text-danger">{errors.address.message}</span>}
+                    {errors.address && <span className="form-error">{errors.address.message}</span>}
                 </div>
 
                 <div className="d-flex justify-content-end">
-                    <button type="submit" className="btn btn-success me-2">Save</button>
-                    <button type="button" className="btn btn-secondary" onClick={() => navigate('/customers')}>Cancel</button>
+                    <button type="submit" className="button-save">Save</button>
+                    <button type="button" className="button-cancel" onClick={() => navigate('/customers')}>Cancel</button>
                 </div>
             </form>
             <ToastContainer />

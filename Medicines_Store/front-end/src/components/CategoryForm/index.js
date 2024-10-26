@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../MedicineForm/Medicine.css';
 
 const CategoryForm = () => {
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
@@ -45,23 +46,23 @@ const CategoryForm = () => {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="form-container">
             <h2>{categoryId ? 'Edit Category' : 'New Category'}</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-3">
+                <div className="form-group">
                     <label htmlFor="categoryName" className="form-label">Category Name</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-input"
                         id="categoryName"
                         {...register('categoryName', { required: 'Category is required' })}
                     />
-                    {errors.categoryName && <span className="text-danger">{errors.categoryName.message}</span>}
+                    {errors.categoryName && <span className="form-error">{errors.categoryName.message}</span>}
                 </div>
 
                 <div className="d-flex justify-content-end">
-                    <button type="submit" className="btn btn-success me-2">Save</button>
-                    <button type="button" className="btn btn-secondary" onClick={() => navigate('/categories')}>Cancel</button>
+                    <button type="submit" className="button-save">Save</button>
+                    <button type="button" className="button-cancel" onClick={() => navigate('/categories')}>Cancel</button>
                 </div>
             </form>
             <ToastContainer />
